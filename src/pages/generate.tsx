@@ -42,20 +42,24 @@ const GeneratePage: NextPage = () => {
 
   const generateIcon = api.generate.generateIcon.useMutation({
     onSuccess(data) {
-      setImagesUrl(data);
+      console.log(data)
+      // setImagesUrl(data);
     },
     onError(error) {
-      setError(error.message);
+      // setError(error.message);
     },
   });
 
   function handleFormSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
+    // generateIcon.mutate({
+    //   ...form,
+    //   numberOfIcons: parseInt(form.numberOfIcons),
+    // });
     generateIcon.mutate({
-      ...form,
-      numberOfIcons: parseInt(form.numberOfIcons),
-    });
+      prompt: form.prompt
+    })
   }
 
   function updateForm(key: string) {
@@ -86,7 +90,6 @@ const GeneratePage: NextPage = () => {
           <FormGroup className="mb-12">
             <label>Prompt</label>
             <Input
-              required
               value={form.prompt}
               onChange={updateForm("prompt")}
             ></Input>
@@ -97,7 +100,6 @@ const GeneratePage: NextPage = () => {
             {colors.map((color) => (
               <label key={color} className="flex gap-2 text-2xl">
                 <input
-                  required
                   type="radio"
                   name="color"
                   checked={color === form.color}
@@ -113,7 +115,6 @@ const GeneratePage: NextPage = () => {
             {shapes.map((shape) => (
               <label key={shape} className="flex gap-2 text-2xl">
                 <input
-                  required
                   type="radio"
                   name="shape"
                   checked={shape === form.shape}
@@ -129,7 +130,6 @@ const GeneratePage: NextPage = () => {
             {styles.map((style) => (
               <label key={style} className="flex gap-2 text-2xl">
                 <input
-                  required
                   type="radio"
                   name="style"
                   checked={style === form.style}
@@ -147,7 +147,6 @@ const GeneratePage: NextPage = () => {
               inputMode="numeric"
               pattern="[1-9]|10"
               value={form.numberOfIcons}
-              required
               onChange={updateForm("numberOfIcons")}
             ></Input>
           </FormGroup>
