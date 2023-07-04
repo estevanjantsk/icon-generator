@@ -26,7 +26,10 @@ export const env = createEnv({
     DALLE_API_KEY: z.string(),
     MOCK_DALLE: z.string(),
     SECRET_ACCESS_KEY: z.string(),
-    ACCESS_KEY_ID: z.string()
+    ACCESS_KEY_ID: z.string(),
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string(),
+    NEXT_STRIPE_SECRET_KEY: z.string(),
+    HOST_NAME: z.string(),
   },
 
   /**
@@ -52,7 +55,10 @@ export const env = createEnv({
     DALLE_API_KEY: process.env.DALLE_API_KEY,
     MOCK_DALLE: process.env.MOCK_DALLE,
     SECRET_ACCESS_KEY: process.env.SECRET_ACCESS_KEY,
-    ACCESS_KEY_ID: process.env.ACCESS_KEY_ID
+    ACCESS_KEY_ID: process.env.ACCESS_KEY_ID,
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+    NEXT_STRIPE_SECRET_KEY: process.env.NEXT_STRIPE_SECRET_KEY,
+    HOST_NAME: process.env.HOST_NAME,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
