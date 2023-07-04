@@ -30,6 +30,7 @@ export const env = createEnv({
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string(),
     NEXT_STRIPE_SECRET_KEY: z.string(),
     HOST_NAME: z.string(),
+    PRICE_ID: z.string(),
   },
 
   /**
@@ -59,6 +60,7 @@ export const env = createEnv({
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
     NEXT_STRIPE_SECRET_KEY: process.env.NEXT_STRIPE_SECRET_KEY,
     HOST_NAME: process.env.HOST_NAME,
+    PRICE_ID: process.env.PRICE_ID
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
