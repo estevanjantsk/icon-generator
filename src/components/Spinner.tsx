@@ -19,5 +19,5 @@ export function Spinner() {
       </svg>
       <span className="sr-only">Loading...</span>
     </div>
-  );
+  )
 }

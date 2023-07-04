@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import { type NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { useState } from "react";
-import { Button } from "~/components/Button";
-import { FormGroup } from "~/components/FormGroup";
-import { Input } from "~/components/Input";
-import { api } from "~/utils/api";
+import { type NextPage } from "next"
+import Head from "next/head"
+import Image from "next/image"
+import { useState } from "react"
+import { Button } from "~/components/Button"
+import { FormGroup } from "~/components/FormGroup"
+import { Input } from "~/components/Input"
+import { api } from "~/utils/api"
 
 const colors = [
   "blue",
@@ -18,16 +18,16 @@ const colors = [
   "yellow",
   "white",
   "black",
-];
+]
 
-const shapes = ["square", "circle", "rounded"];
+const shapes = ["square", "circle", "rounded"]
 
 const styles = [
   "claymorphic",
   "3d rendered",
   "pixelated",
   "illustrated with color pencil",
-];
+]
 
 const GeneratePage: NextPage = () => {
   const [form, setForm] = useState({
@@ -36,9 +36,9 @@ const GeneratePage: NextPage = () => {
     shape: "",
     style: "",
     numberOfIcons: "1",
-  });
-  const [error, setError] = useState("");
-  const [imagesUrl, setImagesUrl] = useState<{ imageUrl: string }[]>([]);
+  })
+  const [error, setError] = useState("")
+  const [imagesUrl, setImagesUrl] = useState<{ imageUrl: string }[]>([])
 
   const generateIcon = api.generate.generateIcon.useMutation({
     onSuccess(data) {
@@ -48,11 +48,11 @@ const GeneratePage: NextPage = () => {
     onError(error) {
       // setError(error.message);
     },
-  });
+  })
 
   function handleFormSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setError("");
+    e.preventDefault()
+    setError("")
     // generateIcon.mutate({
     //   ...form,
     //   numberOfIcons: parseInt(form.numberOfIcons),
@@ -67,8 +67,8 @@ const GeneratePage: NextPage = () => {
       setForm((prev) => ({
         ...prev,
         [key]: e.target.value,
-      }));
-    };
+      }))
+    }
   }
 
   return (
@@ -184,7 +184,7 @@ const GeneratePage: NextPage = () => {
         )}
       </main>
     </>
-  );
-};
+  )
+}
 
-export default GeneratePage;
+export default GeneratePage

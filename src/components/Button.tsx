@@ -1,5 +1,5 @@
-import { cx } from "~/utils/cx";
-import { Spinner } from "./Spinner";
+import { cx } from "~/utils/cx"
+import { Spinner } from "./Spinner"
 
 export function Button(
   props: React.ComponentPropsWithoutRef<"button"> & {
@@ -7,12 +7,12 @@ export function Button(
     isLoading?: boolean;
   }
 ) {
-  const { variant, isLoading, ...rest } = props;
+  const { variant, isLoading, ...rest } = props
 
   const color =
     (variant ?? "primary") === "primary"
       ? "bg-blue-400 hover:bg-blue-500"
-      : "bg-gray-400 hover:bg-gray-500";
+      : "bg-gray-400 hover:bg-gray-500"
 
   return (
     <button
@@ -25,5 +25,5 @@ export function Button(
       {isLoading && <Spinner />}
       {props.children}
     </button>
-  );
+  )
 }
