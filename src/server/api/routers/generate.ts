@@ -92,8 +92,7 @@ export const generateRouter = createTRPCRouter({
       //       .promise();
 
       return {
-        message: "success",
-        image
+        imageUrl: `https://${BUCKET_NAME}.s3.amazonaws.com/${icon.id}`,
       };
     }),
 });
